@@ -1,0 +1,27 @@
+input::placeholder{
+  color:rgb(15, 78, 151);
+  opacity: 0.6;
+}
+
+span{
+  color:rgb(195, 15, 45);
+}
+
+textarea {
+  position:relative;
+  height:500px;
+  width: 100%;
+  resize:none;
+}
+
+textarea::placeholder {
+  padding-top: 0;
+  padding-left:5px;
+  color:rgb(15, 78, 151);
+  opacity: 0.6;
+}
+
+body{
+  background-image: url(https://www.lerugbynistere.fr/photos/620_px/photos-le-calendrier-sexy-des-feminines-de-la-valette-rugby-27-11-17-9047.jpg);
+
+}

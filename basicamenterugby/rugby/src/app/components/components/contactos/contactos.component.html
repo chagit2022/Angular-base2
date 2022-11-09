@@ -1,0 +1,29 @@
+<form [formGroup]="registroForm" (ngSubmit)="contactos()" class="row g-3 m-5" >
+  <div class="row">
+      <div class="col-md-6">
+          <label for="#" class="form-label">First name</label>
+          <input type="text" class="form-control" formControlName="nombre" placeholder="First name" aria-label="First name">
+          <span class="alert-danger fw-bold" *ngIf="registroForm.get('nombre')?.hasError('required') && registroForm.get('nombre')?.touched">Nombre incorrecto</span>
+        </div>
+      <div class="col-md-6">
+          <label for="#" class="form-label">Last name</label>
+          <input type="text" class="form-control" formControlName="apellidos" placeholder="Last name" aria-label="Last name">
+          <span class="alert-danger fw-bold" *ngIf="registroForm.get('apellidos')?.hasError('required') && registroForm.get('apellidos')?.touched">Apellidos incorrecto</span>
+        </div>
+      <div class="col-md-12">
+          <label for="inputEmail4" class="form-label">Email</label>
+          <input type="email" class="form-control" formControlName="correo" placeholder="carraInmunda@defrankenstein.com "id="inputEmail4">
+          <span class="alert-danger fw-bold" *ngIf="registroForm.get('correo')?.hasError('required') && registroForm.get('correo')?.touched">Correo incorrecto</span>
+          <span class="alert-danger fw-bold" *ngIf="registroForm.get('correo')?.hasError('pattern')">Correo invalido</span>
+      </div>
+      <div class="col-12">
+        <label for="inputMensaje" class="form-label inputMensaje">Su mensaje</label>
+        <textarea type="text" class="form-control" formControlName="mensaje" style="height: 200px;" id="inputAddress" placeholder="Bla bla bla, gracias hasta luego"></textarea>
+        <span class="alert-danger fw-bold" *ngIf="registroForm.get('mensaje')?.hasError('required') && registroForm.get('mensaje')?.touched">Deja de ser indeciso, y escribe este maldito mensaje de que me voy a la cama. maldición</span>
+      </div>
+
+      <div class="col-12 mt-4">
+          <button type="submit" class="btn btn-primary">Sign in</button>
+      </div>
+  </div>
+</form>

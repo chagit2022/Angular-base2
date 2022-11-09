@@ -1,0 +1,20 @@
+<div [formGroup]="loginForm" (ngSubmit)="loginUsuario()" class="container row col-12 d-flex justify-content-center align-item-center mx-5 my-3" style="height:500px;">
+  <form>
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Email address</label>
+        <input type="email" class="form-control" formControlName="correo" id="exampleInputEmail1" aria-describedby="emailHelp">
+        <span class="alert-danger fw-bold" *ngIf="loginForm.get('correo')?.hasError('required') && loginForm.get('correo')?.touched">Bueno!!! escribe bien tu correo por favor!!!</span>
+        <span class="alert-danger fw-bold" *ngIf="loginForm.get('correo')?.hasError('pattern')">Amorrrr, encontre un discapacitadoooo!!!! creo que me voy a acostar tarde...!</span>
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Password</label>
+        <input type="password" class="form-control" formControlName="clave" id="exampleInputPassword1">
+
+      </div>
+      <div class="mb-3 form-check">
+        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+        <label class="form-check-label" for="exampleCheck1">Check me out</label>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>

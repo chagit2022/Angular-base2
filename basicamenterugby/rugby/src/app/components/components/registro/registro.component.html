@@ -1,0 +1,63 @@
+<form [formGroup]="registroForm" (ngSubmit)="registrarUsuario()" class="row  d-flex justify-content-center align-item-center g-3 mx-5 mt-4" style="height: 500px;" ng>
+  <div class="row">
+      <div class="col-md-6">
+          <label for="#" class="form-label">First name</label>
+          <input type="text" class="form-control" formControlName="nombre" placeholder="First name" aria-label="First name">
+          <span class="text-danger fw-bold" *ngIf="registroForm.get('nombre')?.hasError('required') && registroForm.get('nombre')?.touched">Nombre invalido</span>
+      </div>
+      <div class="col-md-6">
+          <label for="#" class="form-label">Last name</label>
+          <input type="text" class="form-control" formControlName="apellidos" placeholder="Last name" aria-label="Last name">
+          <span class="alert-danger fw-bold" *ngIf="registroForm.get('apellidos')?.hasError('required') && registroForm.get('apellidos')?.touched">Apellidos invalidos</span>
+        </div>
+      <div class="col-md-6">
+          <label for="inputEmail4" class="form-label">Email</label>
+          <input type="email" class="form-control" formControlName="correo" id="inputEmail4">
+          <span class="alert-danger fw-bold" *ngIf="registroForm.get('correo')?.hasError('required') && registroForm.get('correo')?.touched">Correo invalido</span>
+          <span class="alert-danger fw-bold" *ngIf="registroForm.get('correo')?.hasError('pattern')">Correo incorrecto</span>
+        </div>
+        <div class="col-md-6">
+          <label for="#" class="form-label">Telefono</label>
+          <input type="number" class="form-control" formControlName="telefono" placeholder="Telefono" aria-label="Last name">
+          <span class="alert-danger fw-bold" *ngIf="registroForm.get('telefono')?.hasError('required') && registroForm.get('telefono')?.touched">Telefono invalido</span>
+          <span class="alert-danger fw-bold" *ngIf="registroForm.get('telefono')?.hasError('pattern')">Telefono incorrecto</span>
+        </div>
+      <div class="col-md-6">
+          <label for="inputPassword4" class="form-label">Contraseña</label>
+          <input type="password" class="form-control" formControlName="clave" id="inputPassword4">
+          <span class="alert-danger fw-bold" *ngIf="registroForm.get('clave')?.hasError('required') && registroForm.get('clave')?.touched">Contraseña invalido</span>
+          <span class="alert-danger fw-bold" *ngIf="registroForm.get('clave')?.hasError('pattern')">Contraseña incorrecto</span>
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label">Verificacion de contraseña</label>
+        <input type="password" class="form-control" formControlName="verifyclave" id="inputPassword4">
+        <!-- <span class="alert-danger fw-bold" *ngIf="registroForm.get('verifyclave') = pregistroForm.get('clave')?.hasError('required')">Contraseña invalido</span> -->
+    </div>
+      <div class="col-12">
+          <label for="inputAddress" class="form-label">Address</label>
+          <input type="text" class="form-control" formControlName="direccion" id="inputAddress" placeholder="1234 Main St">
+          <span class="alert-danger fw-bold" *ngIf="registroForm.get('direccion')?.hasError('required') && registroForm.get('direccion')?.touched">Direccion invalido</span>
+      </div>
+      <div class="col-md-6">
+          <label for="inputCity" class="form-label">City</label>
+          <input type="text" class="form-control" formControlName="ciudad" id="inputCity">
+          <span class="alert-danger fw-bold" *ngIf="registroForm.get('ciudad')?.hasError('required') && registroForm.get('ciudad')?.touched">ciudad invalida</span>
+      </div>
+      <div class="col-md-2">
+          <label for="inputZip" class="form-label">Zip</label>
+          <input type="text" class="form-control" formControlName="zip" id="inputZip">
+          <span class="alert-danger fw-bold" *ngIf="registroForm.get('zip')?.hasError('required') && registroForm.get('zip')?.touched">Zip invalido</span>
+      </div>
+      <div class="col-12">
+          <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="gridCheck">
+              <label class="form-check-label" for="gridCheck">
+              Check me out
+              </label>
+          </div>
+      </div>
+      <div class="col-12">
+          <button type="submit" class="btn btn-primary" >Sign in</button>
+      </div>
+  </div>
+</form>
